@@ -5,8 +5,7 @@ The master branch contains only the site files, as these cannot be buried in a s
 
 ## To replicate the site, follow these steps:
 1. Clone my repository using: `git clone https://github.com/HexhamAllstar/HexhamAllstar.Github.io.git`
-2. Install pelican-themes and pelican-plugins:
-  * In the top level of the project run: `git clone --recursive https://github.com/getpelican/pelican-themes ~/pelican-themes`
+2. Install pelican-plugins:
   * In the top level of the project run: `git clone --recursive https://github.com/getpelican/pelican-plugins ~/pelican-plugins`
 3. Create a virtual environment in the top level, install the packages in requirements.txt and activate the environment.
 4. Change to the '/output' directory and use the command `python -m http.server`. This will host the site files located in /output to localhost:8000

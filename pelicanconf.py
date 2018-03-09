@@ -4,20 +4,12 @@ from __future__ import unicode_literals
 
 AUTHOR = 'Phil Bingham'
 SITENAME = "Phil's Data Science Portfolio"
-SITEURL = ''
 
 PATH = 'content'
 
 TIMEZONE = 'Europe/Paris'
 THEME = 'pelican-themes/voidy-bootstrap'
 DEFAULT_LANG = 'English'
-
-# Feed generation is usually not desired when developing
-FEED_ALL_ATOM = None
-CATEGORY_FEED_ATOM = None
-TRANSLATION_FEED_ATOM = None
-AUTHOR_FEED_ATOM = None
-AUTHOR_FEED_RSS = None
 
 # Blogroll
 LINKS = (('Pelican', 'http://getpelican.com/'),
@@ -30,11 +22,13 @@ LINKS = (('Pelican', 'http://getpelican.com/'),
           #('Another social link', '#'),)
 
 DEFAULT_PAGINATION = 10
-
+IPYNB_USE_META_SUMMARY = True
 MARKUP = ('md', 'ipynb')
 
 PLUGIN_PATHS = ['./plugins']
 PLUGINS = ['ipynb.markup']
+
+STATIC_PATHS = ['images']
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True

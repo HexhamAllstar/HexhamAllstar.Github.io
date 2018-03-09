@@ -10,13 +10,14 @@ import sys
 sys.path.append(os.curdir)
 from pelicanconf import *
 
-SITEURL = 'HexhamAllstar.github.io'
-RELATIVE_URLS = False
+SITEURL = ''
+RELATIVE_URLS = True
 
-FEED_ALL_ATOM = 'feeds/all.atom.xml'
-CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
+FEED_ALL_ATOM = None
+CATEGORY_FEED_ATOM = None
 
 DELETE_OUTPUT_DIRECTORY = True
+OUTPUT_RETENTION = [".git"]
 
 # Following items are often useful when publishing
 
