@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = 'Phil Bingham'
 SITENAME = "Phil's Data Science Portfolio"
-SITEURL = 'hexhamallstar.github.io'
+SITEURL = 'https://hexhamallstar.github.io'
 
 RELATIVE_URLS = False
 
