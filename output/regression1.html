@@ -1071,10 +1071,10 @@ h6:hover .anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="This-notebook-contains-the-following-content:">This notebook contains the following content:<a class="anchor-link" href="#This-notebook-contains-the-following-content:">¶</a></h3><ul>
+<h2 id="This-notebook-contains-the-following-content:">This notebook contains the following content:<a class="anchor-link" href="#This-notebook-contains-the-following-content:">¶</a></h2><ul>
 <li><a href="#first-bullet">1. Motivation for Linear Regression</a></li>
 <li><a href="#second-bullet">2. Groundwork for Single Feature RSS Regression</a></li>
-<li><a href="#third_bullet">3. Optimisation of RSS function</a></li>
+<li><a href="#third-bullet">3. Optimisation of RSS function</a></li>
 <li><a href="#fourth-bullet">4. Expansion to Multiple Features</a></li>
 </ul>
 <h2 id="1.-Motivation-for-Linear-Regression-">1. Motivation for Linear Regression <a class="anchor" id="first-bullet"></a><a class="anchor-link" href="#1.-Motivation-for-Linear-Regression-">¶</a></h2><p>Linear Regression is possibly one of the most commonly used machine learning algorithms. One major factor in this is the easily interpretable models that are produced.</p>
@@ -1088,10 +1088,10 @@ h6:hover .anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="2.-Groundwork-for-Single-Feature-RSS-Regression-">2. Groundwork for Single Feature RSS Regression <a class="anchor" id="first-bullet"></a><a class="anchor-link" href="#2.-Groundwork-for-Single-Feature-RSS-Regression-">¶</a></h2><p>Let's take a step back for a second and reduce the problem to having a single feature and single target feature. The equation for a line relating variable x to target y can be written as:</p>
-<p>\begin{align}
-y &amp; = mx + c
-\end{align}</p>
+<h2 id="2.-Groundwork-for-Single-Feature-RSS-Regression-">2. Groundwork for Single Feature RSS Regression <a class="anchor" id="second-bullet"></a><a class="anchor-link" href="#2.-Groundwork-for-Single-Feature-RSS-Regression-">¶</a></h2><p>Let's take a step back for a second and reduce the problem to having a single feature and single target feature. The equation for a line relating variable x to target y can be written as:
+\begin{equation*}
+y = mx + c
+\end{equation*}</p>
 <p>Where m is the gradient of the line and c is the intercept term. Let's look at some sample data:</p>
 </div>
 </div>
@@ -1361,7 +1361,7 @@ mZnlcoAwM7NcDhBmZpbLAcLMzHI5QJiZWS4HCDMzy/X/AbiYWmAoKx++AAAAAElFTkSuQmCC
 <div class="output_area">
 <div class="prompt output_prompt">Out[4]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.legend.Legend at 0x1fe50d51438&gt;</pre>
+<pre>&lt;matplotlib.legend.Legend at 0x2010e572cf8&gt;</pre>
 </div>
 </div>
 <div class="output_area">
@@ -1876,7 +1876,7 @@ gg==
 <div class="output_area">
 <div class="prompt output_prompt">Out[5]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.legend.Legend at 0x1fe514b3ef0&gt;</pre>
+<pre>&lt;matplotlib.legend.Legend at 0x2010e7ad080&gt;</pre>
 </div>
 </div>
 <div class="output_area">
@@ -2206,7 +2206,7 @@ The line with gradient 1.10 and intercept -15 had an RSS of 2536.25
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This gives us an easy way to compare multiple lines and determine which is the best fit (in this case the line with gradient 1 and intercept -10). We could potentially try lots of different gradient and intercept values and keep the ones that give the smallest RSS, but we aren't guaranteed to find the <strong>optimum</strong> parameters.</p>
-<h3 id="3.-Optimisation-of-RSS-function-">3. Optimisation of RSS function <a class="anchor" id="third-bullet"></a><a class="anchor-link" href="#3.-Optimisation-of-RSS-function-">¶</a></h3><p>It turns out that if you were to plot a 3-dimensional plot with the first 2 dimensions being the gradient and intercept and the 3rd dimension being the RSS, the shape of the plot would be like a bowl with a defined minimum (this is called a convex function). If you were to take a 'slice' through the plot perpendicular to either the gradient axis or the intercept axis the resulting plot would be U-shaped. See example below:</p>
+<h2 id="3.-Optimisation-of-RSS-function-">3. Optimisation of RSS function <a class="anchor" id="third-bullet"></a><a class="anchor-link" href="#3.-Optimisation-of-RSS-function-">¶</a></h2><p>It turns out that if you were to plot a 3-dimensional plot with the first 2 dimensions being the gradient and intercept and the 3rd dimension being the RSS, the shape of the plot would be like a bowl with a defined minimum (this is called a convex function). If you were to take a 'slice' through the plot perpendicular to either the gradient axis or the intercept axis the resulting plot would be U-shaped. See example below:</p>
 </div>
 </div>
 </div>
@@ -3421,26 +3421,34 @@ lFJKtfv/qRC+TzBW6YMAAAAASUVORK5CYII=
 \begin{equation*}
 RSS = \sum_{i=1}^n(y_i - (m x_i + c))^2 \\
 \frac{\partial RSS}{\partial m} = \sum_{i=1}^n\frac{\partial}{\partial m}(y_i - (m x_i + c))^2 \\
-\frac{\partial RSS}{\partial m} = -2\sum_{i=1}^n (y_i - (m x_i + c))(x_i) \text{     Equation 1.  }\\
+\end{equation*}
+\begin{equation}
+\frac{\partial RSS}{\partial m} = -2\sum_{i=1}^n (y_i - (m x_i + c))(x_i)
+\end{equation}
+\begin{equation*}
 \frac{\partial RSS}{\partial c} = \sum_{i=1}^n\frac{\partial}{\partial c}(y_i - (m x_i + c))^2 \\
-\frac{\partial RSS}{\partial c} =-2\sum_{i=1}^n (y_i - (m x_i + c)) \text{     Equation 2.  }\\
-\end{equation*}</p>
+\end{equation*}
+\begin{equation}
+\frac{\partial RSS}{\partial c} =-2\sum_{i=1}^n (y_i - (m x_i + c))
+\end{equation}</p>
 <p>Setting equations 1 and 2 equal to zero allow us to rearrange and substitute. Starting with equation 2:
 \begin{equation*}
 \sum_{i=1}^n c =\sum_{i=1}^n y_i -  \sum_{i=1}^n m x_i \\
-Since \sum_{i=1}^n (constant) = n (constant)  \\
-And \sum_{i=1}^n (constant)x_i = (constant) \sum_{i=1}^n x_i \\
+\text{Since  } \sum_{i=1}^n (\text{constant}) = n (\text{constant}) \\
+\text{And  } \sum_{i=1}^n (\text{constant})x_i = (\text{constant}) \sum_{i=1}^n x_i \\
 nc = \sum_{i=1}^n y_i - m \sum_{i=1}^n x_i \\
-c = \dot{y} - m \dot{x} \text{     Equation 3.  }\\
-\end{equation*}</p>
+\end{equation*}
+\begin{equation}
+c = \dot{y} - m \dot{x}
+\end{equation}</p>
 <p>And now equation 1:
 \begin{equation*}
-0 = \sum_{i=1}^n y_i x_i - c \sum_{i=1}^n x_i - m \sum_{i=1}^n (x_i)^2 \\
+0 = \sum_{i=1}^n y_i x_i - c \sum_{i=1}^n x_i - m \sum_{i=1}^n (x_i)^2 
 \end{equation*} 
 Substitute in c from Equation 3:
 \begin{equation*}
 0 = \sum_{i=1}^n y_i x_i - \dot{y} \sum_{i=1}^n x_i + m \dot{x} \sum_{i=1}^n x_i - m \sum_{i=1}^n (x_i)^2 \\
-m = \frac{\sum_{i=1}^n y_i x_i - \dot{y} \sum_{i=1}^n x_i}{\sum_{i=1}^n (x_i)^2 - \dot{x} \sum_{i=1}^n x_i} \\
+m = \frac{\sum_{i=1}^n y_i x_i - \dot{y} \sum_{i=1}^n x_i}{\sum_{i=1}^n (x_i)^2 - \dot{x} \sum_{i=1}^n x_i} 
 \end{equation*}</p>
 <p>With that out of the way, you'll notice that m can be calculated explicitly from the data that we have and c can be calculated explicitly once we have m. One other note is that by rearranging equation 3 you will see that the regression line <strong>always</strong> passes through the point ($\dot{x}$, $\dot{y}$)</p>
 <p>Let's write a function that calculates the closed form solution given a set of x and y values:</p>
@@ -3522,7 +3530,7 @@ m = \frac{\sum_{i=1}^n y_i x_i - \dot{y} \sum_{i=1}^n x_i}{\sum_{i=1}^n (x_i)^2 
 <div class="output_area">
 <div class="prompt output_prompt">Out[10]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.legend.Legend at 0x1fe5174a780&gt;</pre>
+<pre>&lt;matplotlib.legend.Legend at 0x2010ea3b860&gt;</pre>
 </div>
 </div>
 <div class="output_area">
@@ -5075,19 +5083,19 @@ y_i  = w_o + w_1 x_i[1] + w_2 x_i[2] . . . .
 \end{equation*}</p>
 <p>Where $w_{d}$ is the weight of the dth feature and $x_{i}[d]$ is the ith value of the dth feature. We can stack the $w_{d}$ values into a column vector, <strong>w</strong>, and we can stack observation $x_{i}$ into a matrix <strong>H</strong> that has i rows and d columns. The vector of predicted target values, <strong>$\hat{Y}$</strong> is therefore:
 \begin{equation*}
-\hat{Y}  = Hw\\
+\hat{Y}  = Hw
 \end{equation*}</p>
 <h3 id="RSS-with-matrix-notation">RSS with matrix notation<a class="anchor-link" href="#RSS-with-matrix-notation">¶</a></h3><p>Like before we are trying to minimise the RSS cost function. Now instead of :
 \begin{equation*}
-RSS = \sum_{i=1}^n(y_i - (m x_i + c))^2 \\
+RSS = \sum_{i=1}^n(y_i - (m x_i + c))^2 
 \end{equation*}
 We are optimising:
 \begin{equation*}
-RSS = \sum_{i=1}^n(y_i - Hw)^2 \\
+RSS = \sum_{i=1}^n(y_i - Hw)^2 
 \end{equation*}
 Which simplifies to:
 \begin{equation*}
-RSS = (Y - Hw)^T (Y-Hw)\\
+RSS = (Y - Hw)^T (Y-Hw)
 \end{equation*}
 The gradient of RSS is therefore:
 \begin{equation*}
@@ -6011,8 +6019,8 @@ w_{new} = w_{old} + 2\eta H^T (Y - Hw)
         <span class="n">cost</span> <span class="o">=</span> <span class="n">RSS_multi</span><span class="p">(</span><span class="n">y_values</span><span class="p">,</span> <span class="n">predict_multi</span><span class="p">(</span><span class="n">x_values</span><span class="p">,</span> <span class="n">weights</span><span class="p">))</span>
         <span class="n">cost_history</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cost</span><span class="p">)</span>
         
-        <span class="k">if</span> <span class="n">iteration</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># after the first iteration, check the size of cost step taken</span>
-            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">cost_history</span><span class="p">[</span><span class="n">iteration</span><span class="p">]</span> <span class="o">-</span> <span class="n">cost_history</span><span class="p">[</span><span class="n">iteration</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">&lt;</span> <span class="n">tol</span><span class="p">:</span> <span class="c1"># if the change in cost is less than the tolerance</span>
+        <span class="k">if</span> <span class="n">iteration</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span> <span class="c1"># after the first iteration, check the size of the maximum weight update</span>
+            <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">update_term</span><span class="o">.</span><span class="n">max</span><span class="p">())</span> <span class="o">&lt;</span> <span class="n">tol</span><span class="p">:</span> <span class="c1"># if the maximum change for a single weight was less than tolerance</span>
                 <span class="nb">print</span><span class="p">(</span><span class="s1">'Converged on solution.'</span><span class="p">)</span> <span class="c1"># tell the user that the function converged</span>
                 <span class="k">break</span> <span class="c1"># break out of the loop and return the parameters</span>
             
@@ -6047,10 +6055,10 @@ w_{new} = w_{old} + 2\eta H^T (Y - Hw)
 <div class="output_area">
 <div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Maximum iterations reached without convergence. Try a different step size and tolerance.
-Computed 1000000 iterations.
+<pre>Converged on solution.
+Computed 568173 iterations.
 Weights on final iteration are:
-[ -0.87516399  10.01929105   2.97931287]
+[ -0.51997654  10.0154375    2.98122403]
 </pre>
 </div>
 </div>
