@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = 'Phil Bingham'
 SITENAME = "Phil's Data Science Portfolio"
+SITEURL = ''
 
 PATH = 'content'
 
@@ -30,9 +31,6 @@ PLUGINS = ['ipynb.markup']
 
 STATIC_PATHS = ['images']
 
-# Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
-
 SITESUBTITLE ='A collection of data science/machine learning notebooks and anything else that I find interesting.'
 
 # Extra stylesheets, for bootstrap overrides or additional styling.
@@ -51,3 +49,9 @@ SOCIAL = (('LinkedIn', 'http://www.linkedin.com/in/philbingham45/',
         ('GitHub', 'http://github.com/hexhamallstar',
          'fa fa-github-square fa-fw fa-lg'),
         )
+        
+FEED_ALL_ATOM = None
+CATEGORY_FEED_ATOM = None
+TRANSLATION_FEED_ATOM = None
+AUTHOR_FEED_ATOM = None
+AUTHOR_FEED_RSS = None

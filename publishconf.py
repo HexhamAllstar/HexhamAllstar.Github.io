@@ -2,24 +2,60 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
-# This file is only used if you use `make publish` or
-# explicitly specify it as your config file.
+AUTHOR = 'Phil Bingham'
+SITENAME = "Phil's Data Science Portfolio"
+SITEURL = 'hexhamallstar.github.io'
 
-import os
-import sys
-sys.path.append(os.curdir)
-from pelicanconf import *
+RELATIVE_URLS = False
 
-SITEURL = ''
-RELATIVE_URLS = True
+PATH = 'content'
+
+TIMEZONE = 'Europe/Paris'
+THEME = 'pelican-themes/voidy-bootstrap'
+DEFAULT_LANG = 'English'
+
+# Blogroll
+LINKS = (('Pelican', 'http://getpelican.com/'),
+         ('Python.org', 'http://python.org/'),
+         ('Jinja2', 'http://jinja.pocoo.org/'),
+         ('Download CV', '#'),)
+
+# Social widget
+#SOCIAL = (('You can add links in your config file', '#'),
+          #('Another social link', '#'),)
+
+DEFAULT_PAGINATION = 10
+IPYNB_USE_META_SUMMARY = True
+MARKUP = ('md', 'ipynb')
+
+PLUGIN_PATHS = ['./plugins']
+PLUGINS = ['ipynb.markup']
+
+STATIC_PATHS = ['images']
+
+DISQUS_SITENAME = "hexhamallstar-github-io"
+
+SITESUBTITLE ='A collection of data science/machine learning notebooks and anything else that I find interesting.'
+
+# Extra stylesheets, for bootstrap overrides or additional styling.
+STYLESHEET_FILES = ("pygment.css", "voidybootstrap.css",)
+
+# Put taglist at end of articles, and use the default sharing button implementation.
+CUSTOM_ARTICLE_FOOTERS = ("taglist.html", "sharing.html", )
+CUSTOM_SCRIPTS_ARTICLE = "sharing_scripts.html"
+CUSTOM_SIDEBAR_MIDDLES = ("sb_links.html", "sb_taglist.html", )
+
+# Default sidebar template. Omit this setting for single column mode without sidebar.
+SIDEBAR = "sidebar.html"
+
+SOCIAL = (('LinkedIn', 'http://www.linkedin.com/in/philbingham45/',
+         'fa fa-linkedin-square fa-fw fa-lg'),
+        ('GitHub', 'http://github.com/hexhamallstar',
+         'fa fa-github-square fa-fw fa-lg'),
+        )
 
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
-
-DELETE_OUTPUT_DIRECTORY = True
-OUTPUT_RETENTION = [".git"]
-
-# Following items are often useful when publishing
-
-#DISQUS_SITENAME = ""
-#GOOGLE_ANALYTICS = ""
+TRANSLATION_FEED_ATOM = None
+AUTHOR_FEED_ATOM = None
+AUTHOR_FEED_RSS = None
