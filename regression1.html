@@ -1361,7 +1361,7 @@ mZnlcoAwM7NcDhBmZpbLAcLMzHI5QJiZWS4HCDMzy/X/AbiYWmAoKx++AAAAAElFTkSuQmCC
 <div class="output_area">
 <div class="prompt output_prompt">Out[4]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.legend.Legend at 0x1f2c042d668&gt;</pre>
+<pre>&lt;matplotlib.legend.Legend at 0x191a64bb2e8&gt;</pre>
 </div>
 </div>
 <div class="output_area">
@@ -1876,7 +1876,7 @@ gg==
 <div class="output_area">
 <div class="prompt output_prompt">Out[5]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.legend.Legend at 0x1f2c0874fd0&gt;</pre>
+<pre>&lt;matplotlib.legend.Legend at 0x191aa93e048&gt;</pre>
 </div>
 </div>
 <div class="output_area">
@@ -3419,29 +3419,25 @@ lFJKtfv/qRC+TzBW6YMAAAAASUVORK5CYII=
 <p>This kind of convex plot has a nice property in that if you are to the left of the minimum the gradient will always be negative and if you are to the right of the minimum the gradient will always be positive.</p>
 <p>One way to find the minimum is to form an equation for the gradient and set that equation equal to zero (the <strong>closed form</strong> solution). 
 \begin{equation*}
-RSS = \sum_{i=1}^n(y_i - (m x<em>i + c))^2 \
-\frac{\partial RSS}{\partial m} = \sum</em>{i=1}^n\frac{\partial}{\partial m}(y_i - (m x_i + c))^2 \</p>
-<ol>
-<li>\frac{\partial RSS}{\partial m} = -2\sum_{i=1}^n (y_i - (m x_i + c))(x<em>i) \
-\frac{\partial RSS}{\partial c} = \sum</em>{i=1}^n\frac{\partial}{\partial c}(y_i - (m x_i + c))^2 \</li>
-<li>\frac{\partial RSS}{\partial c} =-2\sum_{i=1}^n (y_i - (m x_i + c)) \
-\end{equation*}</li>
-</ol>
+RSS = \sum_{i=1}^n(y_i - (m x_i + c))^2 \\
+\frac{\partial RSS}{\partial m} = \sum_{i=1}^n\frac{\partial}{\partial m}(y_i - (m x_i + c))^2 \\
+\frac{\partial RSS}{\partial m} = -2\sum_{i=1}^n (y_i - (m x_i + c))(x_i) \text{     Equation 1.  }\\
+\frac{\partial RSS}{\partial c} = \sum_{i=1}^n\frac{\partial}{\partial c}(y_i - (m x_i + c))^2 \\
+\frac{\partial RSS}{\partial c} =-2\sum_{i=1}^n (y_i - (m x_i + c)) \text{     Equation 2.  }\\
+\end{equation*}</p>
 <p>Setting equations 1 and 2 equal to zero allow us to rearrange and substitute. Starting with equation 2:
 \begin{equation*}
-\sum<em>{i=1}^n c =\sum</em>{i=1}^n y<em>i -  \sum</em>{i=1}^n m x<em>i \
-Since \sum</em>{i=1}^n (constant) = n (constant)  \
-And \sum_{i=1}^n (constant)x<em>i = (constant) \sum</em>{i=1}^n x<em>i \
-nc = \sum</em>{i=1}^n y<em>i - m \sum</em>{i=1}^n x_i \</p>
-<ol>
-<li>c = \dot{y} - m \dot{x} \
-\end{equation*}</li>
-</ol>
+\sum_{i=1}^n c =\sum_{i=1}^n y_i -  \sum_{i=1}^n m x_i \\
+Since \sum_{i=1}^n (constant) = n (constant)  \\
+And \sum_{i=1}^n (constant)x_i = (constant) \sum_{i=1}^n x_i \\
+nc = \sum_{i=1}^n y_i - m \sum_{i=1}^n x_i \\
+c = \dot{y} - m \dot{x} \text{     Equation 3.  }\\
+\end{equation*}</p>
 <p>And now equation 1:
 \begin{equation*}
 0 = \sum_{i=1}^n y_i x_i - c \sum_{i=1}^n x_i - m \sum_{i=1}^n (x_i)^2 \\
 \end{equation*} 
-Substitute in c from equation 3:
+Substitute in c from Equation 3:
 \begin{equation*}
 0 = \sum_{i=1}^n y_i x_i - \dot{y} \sum_{i=1}^n x_i + m \dot{x} \sum_{i=1}^n x_i - m \sum_{i=1}^n (x_i)^2 \\
 m = \frac{\sum_{i=1}^n y_i x_i - \dot{y} \sum_{i=1}^n x_i}{\sum_{i=1}^n (x_i)^2 - \dot{x} \sum_{i=1}^n x_i} \\
@@ -3526,7 +3522,7 @@ m = \frac{\sum_{i=1}^n y_i x_i - \dot{y} \sum_{i=1}^n x_i}{\sum_{i=1}^n (x_i)^2 
 <div class="output_area">
 <div class="prompt output_prompt">Out[10]:</div>
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.legend.Legend at 0x1f2c0b0a898&gt;</pre>
+<pre>&lt;matplotlib.legend.Legend at 0x191aabc98d0&gt;</pre>
 </div>
 </div>
 <div class="output_area">
@@ -5984,7 +5980,7 @@ w_{new} = w_{old} + 2\eta H^T (Y - Hw)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [20]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">multi_batch_grad_descent</span><span class="p">(</span><span class="n">x_values</span><span class="p">,</span> <span class="n">y_values</span><span class="p">,</span> 
@@ -6038,25 +6034,11 @@ w_{new} = w_{old} + 2\eta H^T (Y - Hw)
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [21]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">weights</span><span class="p">,</span> <span class="n">cost_history</span> <span class="o">=</span> <span class="n">multi_batch_grad_descent</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">((</span><span class="n">x1_values</span><span class="p">,</span> <span class="n">x2_values</span><span class="p">)),</span> <span class="n">y_3dvalues</span><span class="p">)</span>
 </pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Maximum iterations reached without convergence. Try a different step size and tolerance.
-Computed 1000000 iterations.
-Weights on final iteration are:
-[ -0.87516399  10.01929105   2.97931287]
-</pre>
-</div>
 </div>
 </div>
 </div>
@@ -6071,7 +6053,7 @@ Weights on final iteration are:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In [22]:</div>
+<div class="prompt input_prompt">In [ ]:</div>
 <div class="inner_cell">
 <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="k">import</span> <span class="n">LinearRegression</span> <span class="c1"># import the linear regression object</span>
@@ -6079,17 +6061,6 @@ Weights on final iteration are:
 <span class="n">reg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">column_stack</span><span class="p">((</span><span class="n">x1_values</span><span class="p">,</span> <span class="n">x2_values</span><span class="p">)),</span> <span class="n">y_3dvalues</span><span class="p">)</span> <span class="c1"># fit to our data</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">reg</span><span class="o">.</span><span class="n">intercept_</span><span class="p">,</span> <span class="n">reg</span><span class="o">.</span><span class="n">coef_</span><span class="p">)</span> <span class="c1"># print the intercept followed by the coefficients</span>
 </pre></div>
-</div>
-</div>
-</div>
-<div class="output_wrapper">
-<div class="output">
-<div class="output_area">
-<div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>-2.23404371338 [ 10.03403398   2.97200116]
-</pre>
-</div>
 </div>
 </div>
 </div>
