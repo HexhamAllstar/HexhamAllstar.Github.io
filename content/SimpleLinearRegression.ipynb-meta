@@ -1,0 +1,8 @@
+Title: Derivation & Implementation of Linear Regression
+Slug: regression1
+Date: 2018-03-10 19:00
+Category: Notebooks
+Tags: Python,Derivation,Regression
+author: Phil Bingham
+Summary: A derivation and implementation of Closed-Form and Gradient Descent Linear Regression, first with a single feature and then expanded to multiple features. Libraries used: Numpy, Matplotlib.
+summaryimage: /images/residuals.jpg,/images/rss.jpg
