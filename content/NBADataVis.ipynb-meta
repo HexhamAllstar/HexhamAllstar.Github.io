@@ -1,0 +1,8 @@
+Title: NBA Webscraping & Visualisation
+Slug: nbaviz
+Date: 2018-03-17 12:30
+Category: Notebooks
+Tags: Python,Selenium,Webscraping,Data Visualisation,SQL,Basketball, Data Cleaning
+author: Phil Bingham
+Summary: A webscraping and data visualisation project in Python. Using Selenium to obtain NBA (basketball) match data, SQL to store the data, Pandas for data manipulation/cleaning and Seaborn/Matplotlib to combine visualisations. The outcome is a single line command that generates a complex visualisation for every team in the league.
+summaryimage: /images/nba.png, /images/miami-heat.png
