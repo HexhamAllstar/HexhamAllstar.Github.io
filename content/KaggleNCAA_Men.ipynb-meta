@@ -2,7 +2,7 @@ Title: Kaggle NCAA March Madness Submission
 Slug: kaggle-ncaa
 Date: 2018-04-12 15:20
 Category: Notebooks
-Tags: Python,Basketball,EDA,Classification,Kaggle
+Tags: Python,Basketball,EDA,Classification,Kaggle,Feature Creation
 author: Phil Bingham
-Summary: My entry into the Kaggle NCAA March Madness Competition. The aim was to predict the outcomes of each game in the 2018 tournament.
-summaryimage: /images/marchmadness.png, /images/ncaa_boxplot.png, /images/ncaa_tuning.png
+Summary: My entry into the Kaggle NCAA March Madness Competition. The aim was to predict the outcomes of each game in the 2018 tournament. Features were created from various data sources and used to construct a Logistic Regression model.
+summaryimage: /images/marchmadness.png, /images/ncaa_boxplot.png
