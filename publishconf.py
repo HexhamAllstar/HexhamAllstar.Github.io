@@ -3,7 +3,7 @@
 from __future__ import unicode_literals
 
 AUTHOR = 'Phil Bingham'
-SITENAME = "Phil's Data Science Portfolio"
+SITENAME = "Phil Bingham's Data Science Portfolio"
 SITEURL = 'https://hexhamallstar.github.io'
 
 RELATIVE_URLS = False
@@ -15,10 +15,11 @@ THEME = 'pelican-themes/voidy-bootstrap'
 DEFAULT_LANG = 'English'
 
 # Blogroll
-LINKS = (('Pelican', 'http://getpelican.com/'),
-         ('Python.org', 'http://python.org/'),
-         ('Jinja2', 'http://jinja.pocoo.org/'),
-         ('Download CV', '#'),)
+LINKS = (('r/datascience', 'https://www.reddit.com/r/datascience/'),
+         ('r/machinelearning', 'https://www.reddit.com/r/MachineLearning/'),
+         ('NBA', 'https://www.nba.com'),
+         ('DataScienceCentral', 'https://www.datasciencecentral.com/'),
+         ('KDnuggets','https://www.kdnuggets.com/'),)
 
 # Social widget
 #SOCIAL = (('You can add links in your config file', '#'),
@@ -35,7 +36,7 @@ STATIC_PATHS = ['images']
 
 DISQUS_SITENAME = "hexhamallstar-github-io"
 
-SITESUBTITLE ='A collection of data science/machine learning notebooks and anything else that I find interesting.'
+SITESUBTITLE ='A collection of my personal data science/machine learning work.'
 
 # Extra stylesheets, for bootstrap overrides or additional styling.
 STYLESHEET_FILES = ("pygment.css", "voidybootstrap.css",)
