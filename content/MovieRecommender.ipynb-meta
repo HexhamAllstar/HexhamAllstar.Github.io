@@ -1,0 +1,8 @@
+Title: Collaborative Filtering for Movie Recommendations
+Slug: movie-rec
+Date: 2018-04-18 15:20
+Category: Notebooks
+Tags: Python,EDA,Recommender System,MovieLens,Collaborative Filtering
+author: Phil Bingham
+Summary: Using Python to explore a large dataset of Movie ratings and build a Collaborative Filtering Recommender System. The final system was evaluated and shown to be an improvement over a baseline non-personal system.
+summaryimage: /images/Santa-With-Muscles.jpg, /images/movielens_std.png
