@@ -1,5 +1,21 @@
 {% extends "base.html" %}
 {% block title %}{{ article.title|striptags|e }} - {{ SITENAME }}{% endblock %}
+
+{% block extra_head %}
+{% if 'angular' in article.include %}
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+{% endif %}
+{% if 'jquery' in article.include %}
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+{% endif %}
+{% if 'requirejs' in article.include %}
+<script src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.3.5/require.min.js"></script>
+{% endif %}
+{% if 'bokeh' in article.include %}
+<script src="//cdnjs.cloudflare.com/ajax/libs/bokeh/0.12.7/bokeh.min.css"></script>
+{% endif %}
+{% endblock %}
+
 {% block metadesc %}{{ article.description|e }}{% endblock %}
 {% block open_graph %}
 {% if OPEN_GRAPH %}
@@ -32,7 +48,7 @@
     {% endif %}
 {% endif %}
 {% if TWITTER_CARD and TWITTER_USERNAME %}
-    <meta name="twitter:card" content="summary"> 
+    <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="{{ article.title|striptags|e }}">
     <meta name="twitter:description" content="{{ article.description|striptags|e }}">
     <meta name="twitter:site" content="@{{ TWITTER_USERNAME }}">
@@ -85,7 +101,7 @@
     {% include "includes/" + CUSTOM_ARTICLE_PRECONTENT|default('article_precontent.html') ignore missing %}
 	{{ article.content }}
   </div>
-  
+
   {% for file in CUSTOM_ARTICLE_FOOTERS %}
     {% include "includes/" + file %}
   {% endfor %}
