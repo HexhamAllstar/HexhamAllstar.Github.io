@@ -1,0 +1,8 @@
+Title: CNN for Digit Recognition
+Slug: mnist-CNN
+Date: 2018-04-25 17:00
+Category: Notebooks
+Tags: Python, Keras, CNN, Supervised, Classification
+author: Phil Bingham
+Summary: Using Keras in Python to design and implement a Convolutional Neural Network to recognise images of hand-written digits. The final network achieved a classification accuracy of 98.8%. It was found that misclassified examples were generally ambiguous and poorly written.
+summaryimage: /images/convolution.png, /images/mnist_cnn_history.png
