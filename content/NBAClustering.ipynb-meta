@@ -2,8 +2,8 @@ Title: NBA Clustering
 Slug: nbacluster
 Date: 2018-04-23 12:00
 Category: Notebooks
-Tags: Python, EDA, Data Cleaning, Clustering, Unsupervised, NBA, Basketball
+Tags: Python, EDA, Data Cleaning, Clustering, Unsupervised, NBA, Basketball, PCA, bokeh
 author: Phil Bingham
 Include: requirejs,jquery,bokeh
-Summary: Using Python to perform Clustering in an unsupervised manner, finding groups of similar NBA players based on their per-minute statistics for the 2017/2018 regular season. K-means was used with smart initialization, and the value of k chosen based on an analysis of the improved total cost vs the penalty to interpretability.
+Summary: Using Python to perform Clustering in an unsupervised manner, finding groups of similar NBA players based on their per-minute statistics for the 2017/2018 regular season. K-means was used with smart initialization, and the value of k chosen based on an analysis of the improved total cost vs the penalty to interpretability. Principal Component Analysis (PCA) was then used to visualize the learned clusters.
 summaryimage: /images/nba.png, /images/cluster_plot.png

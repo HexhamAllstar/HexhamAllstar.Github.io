@@ -1,0 +1,8 @@
+Title: Movie Recommendations revisited with Spark and ALS
+Slug: movie-rec-ALS
+Date: 2018-05-03 17:20
+Category: Notebooks
+Tags: Python,Recommender System,MovieLens,PySpark, Spark, ALS
+author: Phil Bingham
+Summary: Using Matrix Factorization to learn hidden user/movie features with Alternating Least Squares (ALS) implemented in PySpark to create an improved recommender system with the MovieLens dataset.
+summaryimage: /images/spark-logo.png, /images/matrix_factorization.png
