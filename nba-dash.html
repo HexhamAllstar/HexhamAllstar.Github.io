@@ -14,11 +14,11 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content=" Posts tagged with Derivation" />
+    <meta name="description" content="" />
     <meta name="author" content="Phil Bingham" />
     <meta name="generator" content="Pelican (VoidyBootstrap theme)" />
 
-    <title>Tag:Derivation - Phil Bingham's Data Science Portfolio</title>
+    <title>NBA Tableau Dashboard - Phil Bingham's Data Science Portfolio</title>
 
         <link rel="stylesheet"
               href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -81,50 +81,79 @@
     <div class="container" id="main-container">
       <div class="row">
         <div class="col-md-9" id="content">
-<ol class="breadcrumb">
-    <li><a href="https://hexhamallstar.github.io/" title="Home" rel="home">
-		<i class="fa fa-home fa-fw fa-lg"></i> </a></li>
-    <li>Tags </li>
-    <li class="active">Derivation</li>
-</ol>
-    <article>
+<article itemscope="itemscope" itemtype="http://schema.org/BlogPosting">
+  <header class="article-header">
 <abbr class="article-header-date">
-  Sat 10 March 2018
+  Thu 10 May 2018
 </abbr> <h1>
-  <a href="https://hexhamallstar.github.io/regression1.html" rel="bookmark"
-     title="Permalink to Derivation &amp; Implementation of Linear Regression">
-    Derivation & Implementation of Linear Regression
+  <a href="https://hexhamallstar.github.io/nba-dash.html" rel="bookmark"
+     title="Permalink to NBA Tableau Dashboard">
+    NBA Tableau Dashboard
   </a>
 </h1><div class="article-header-info">
   <p>
       Posted by <a href="https://hexhamallstar.github.io/author/phil-bingham.html">Phil Bingham</a>
     in 
-    <a href="https://hexhamallstar.github.io/category/notebooks.html">
-      Notebooks</a>
+    <a href="https://hexhamallstar.github.io/category/tableau.html">
+      Tableau</a>
     &nbsp;&nbsp;
   </p>
-</div> <!-- /.article-header-info -->
-      <div class="summary">
-    <div class="container"><div class="col-md-6" style="padding-left: 0px;  padding-right: 0px;">
-           <img src="/images/residuals.jpg" class="img-fluid" height="200" style="float: left; max-width: 50%;">
-           <img src="/images/rss.jpg" class="img-fluid" height="200" style="float: left; max-width: 50%;">
-           </div></div>
-		<p>A derivation and implementation of Closed-Form and Gradient Descent Linear Regression, first with a single feature and then expanded to multiple features. Libraries used: Numpy, Matplotlib.</p>
-    <div class="article-tag-list">
-    <span class="label label-default">Tags in this post</span>
-    	<a href="https://hexhamallstar.github.io/tag/python.html"><i class="fa fa-tag"></i>Python</a>&nbsp;
-    	<a href="https://hexhamallstar.github.io/tag/derivation.html"><i class="fa fa-tag"></i>Derivation</a>&nbsp;
-    	<a href="https://hexhamallstar.github.io/tag/regression.html"><i class="fa fa-tag"></i>Regression</a>&nbsp;
+</div> <!-- /.article-header-info -->  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.3.5/require.min.js"></script>
+  </header>
+  <div class="content-body" itemprop="text articleBody">
+	<p>Following on from my post <a href="https://hexhamallstar.github.io/nbaviz.html">NBA Webscraping &amp; Visualisation</a>, in which I showed the structure and function of a webscraping app that gets data automatically from the official NBA website and stores it using an SQLite database, I decided that I wanted to create an interactive summary of players statistics over the season.</p>
+<p>Tableau is a flexible piece of software used broadly for data analytics/business intelligence purposes, as it makes it easy to create visualisations that update as the data changes over time. Tableau does not natively support SQLite databases, however by downloading and installing the relevant ODBC drivers as seen on <a href="https://onlinehelp.tableau.com/current/pro/desktop/en-us/odbc_customize.html">this</a> webpage.
+The main components of my dashboard are:</p>
+<ul>
+<li>A chart that shows the top 5 players in terms of average per game of a statistic selected via a dropdown box. The dropdown box controls the value of a parameter which in turn controls the Measure used to aggregate via CASE statements.</li>
+<li>A web container, which is directed to a URL defined by the player that has been clicked on in the first chart. This URL points to an image of the player, and is controlled by a URL action.</li>
+<li>A text table containing the most important statistics for the selected player. This is controlled by a filter action.</li>
+</ul>
+<p>The final result is a clean dashboard that allows the user to explore statistics they are interested in and see the top players in each category, as well as see an individual summary on click.</p>
+<p><body>
+<div class='tableauPlaceholder' id='viz1525971669728' style='position: relative'><noscript><a href='#'><img alt='NBA 2017&#47;18 Regular Season Per-Game Stat LeadersUse the drop-down menu on the right to choose a statisticClick on a bar to get that players regular season summary ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;NB&#47;NBASeasonStatsStory&#47;StatLeadersDashboard&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='NBASeasonStatsStory&#47;StatLeadersDashboard' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;NB&#47;NBASeasonStatsStory&#47;StatLeadersDashboard&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1525971669728');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='650px';vizElement.style.height='887px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+</body></p>
+  </div>
+
+<div class="article-tag-list">
+<span class="label label-default">Tags</span>
+	<a href="https://hexhamallstar.github.io/tag/tableau.html"><i class="fa fa-tag"></i>Tableau</a>&nbsp;
+	<a href="https://hexhamallstar.github.io/tag/dashboard.html"><i class="fa fa-tag"></i>Dashboard</a>&nbsp;
+	<a href="https://hexhamallstar.github.io/tag/nba.html"><i class="fa fa-tag"></i>NBA</a>&nbsp;
+	<a href="https://hexhamallstar.github.io/tag/basketball.html"><i class="fa fa-tag"></i>Basketball</a>&nbsp;
+	<a href="https://hexhamallstar.github.io/tag/sql.html"><i class="fa fa-tag"></i>SQL</a>&nbsp;
+</div>  <hr />
+  <div class="well well-sm">  <!-- Social media sharing buttons -->
+
+    <!-- Google+ -->
+    <div class="g-plus" data-action="share" data-annotation="bubble"></div>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <div class="g-plusone" data-size="medium"></div>&nbsp;
+
+    <!-- Facebook -->
+    <div class="fb-like" 
+        data-href="https://hexhamallstar.github.io/nba-dash.html" 
+        data-layout="button_count" 
+        data-action="like" data-show-faces="true" 
+        data-share="true">
     </div>
-		<p class="content-emphasis"><a href="https://hexhamallstar.github.io/regression1.html">
-			Read more... <i class="fa fa-arrow-circle-right fa-fw fa-lg"></i>
-		</a></p>
-      </div>    </article>
-    <hr />
-
-<nav class="index-pager">
-
-</nav> <!-- /index-pager -->
+    &nbsp;
+  </div> <!-- /Social media sharing buttons -->
+  <div class="comments">
+	<h2>Comments</h2>
+	<div id="disqus_thread"></div>
+	<script type="text/javascript">
+				   (function() {
+						var dsq = document.createElement('script');
+						dsq.type = 'text/javascript'; dsq.async = true;
+						dsq.src = '//hexhamallstar-github-io.disqus.com/embed.js';
+						(document.getElementsByTagName('head')[0] ||
+						 document.getElementsByTagName('body')[0]).appendChild(dsq);
+				  })();
+	</script>
+  </div>
+</article>
         </div><!-- /content -->
 
         <div class="col-md-3 sidebar-nav" id="sidebar">
@@ -301,5 +330,30 @@
             crossorigin="anonymous"></script>
 
 
-  </body>
+<!-- Facebook -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+
+<!-- Twitter -->
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+<!-- Google+ -->
+<!-- Synchronous 
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
+-->
+<!-- Asynchronous -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/platform.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>  </body>
 </html>
